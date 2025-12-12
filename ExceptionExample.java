@@ -1,11 +1,10 @@
-public class ExceptionExample {
-    public static void main(String[] args) {
+public static void main(String[] args) {
         try {
-            String text = null;  
-            int length = text.length();
-            System.out.println("Length: " + length);
-        } catch (NullPointerException e) {
-            System.out.println("Caught Exception: " + e.getMessage());
-        }
-    }
+            Class.forName("coreclass");
+        } catch (ClassFormatError e) {
+            System.out.println("Class format error occurred");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Class not found");
+        }
+    }
 }
